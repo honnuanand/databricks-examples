@@ -45,7 +45,20 @@ the supported methods are now:
 | Secure deployment pipelines              | ✅ ADLS + `.whl` packaging                     |
 | Quick script reuse within a notebook     | ✅ Workspace Files                             |
 ---
-
+## Option 1 - **Workspace Files**
+📦 Upload your .py or .whl files to:
+	•	Workspace Files (/Workspace/Users/<your_email>/lib_folder/)
+	•	These files are version-controlled, accessible via notebooks, and secure
+	•	Supports both .py and .whl modules
+```Python
+import sys
+sys.path.append("/Workspace/Users/your.name@databricks.com/lib_folder")
+import mylib
+mylib.greet("Anand")
+```
+---
+## Option 2 - **External Storage (e.g., ADLS) with `%pip install` from `.whl` files**
+---
 ## 📦 What This Example Covers
 
 This example shows how to:
