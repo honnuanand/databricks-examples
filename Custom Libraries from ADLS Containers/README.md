@@ -18,6 +18,27 @@ the supported methods are now:
 ✅ **Cluster or workspace libraries** → attach prebuilt `.whl` or `.egg` files via UI or cluster config  
 ✅ **Init scripts (advanced)** → for automated, team-wide setups
 
+| **Feature / Aspect**            | **Workspace Files**                                 | **ADLS (Azure Data Lake Storage)**                                                |
+|-------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
+| 🛠️ Setup Complexity            | ✅ Simple — upload via UI or CLI                    | ⚠️ Moderate — requires secret scope, no mounts in Azure Gov                       |
+| 🔐 Security & Access Control    | ✅ Workspace ACLs                                   | ✅ Better — uses Azure IAM + secret scopes                                        |
+| 📦 Library Packaging            | ✅ Use raw `.py` files or folders                   | ✅ Supports `.whl`, `.egg` for structured, versioned deployment                   |
+| 🔄 Version Control              | ✅ Git-backed Repos possible                        | ❌ Manual — but supports CI/CD pipelines                                          |
+| ♻️ Reusability Across Notebooks | ✅ Yes, within workspace                            | ✅ Yes — portable across clusters/workspaces                                      |
+| 🚀 Deployment Speed             | ✅ Fast for dev/test                                | ⚠️ Copy required (no mounts in Azure Gov)                                        |
+| 💾 Persistence                  | ✅ Tied to workspace                                | ✅ Long-term, survives workspace/cluster changes                                  |
+| 🧪 Best for                     | Dev/test, quick iterations                         | ✅ Production, secure CI/CD, Gov cloud compliant                                  |
+| ⚠️ Limitations                 | ❌ Workspace bloat, no clean versioning             | ❌ Needs file copy (no mount), more setup overhead                                |
+| 🔌 External Access / Automation | ✅ Via UI, API, or Git integration                  | ✅ Excellent for automated externalized pipelines                                 |
+| 🧠 DBR Compatibility (15.x+)    | ✅ Fully supported                                  | ✅ Fully supported — use copy approach (mount not supported in Gov)              |
+
+
+| **Use Case**                             | **Preferred Method**                          |
+|------------------------------------------|-----------------------------------------------|
+| Dev/test (any cloud)                     | ✅ Workspace Files                             |
+| Production (Azure Gov or Commercial)     | ✅ ADLS with secret-based access (no mount)    |
+| Secure deployment pipelines              | ✅ ADLS + `.whl` packaging                     |
+| Quick script reuse within a notebook     | ✅ Workspace Files                             |
 ---
 
 ## 📦 What This Example Covers
@@ -29,13 +50,6 @@ This example shows how to:
 4. Import and use it inside notebooks **without relying on deprecated methods**
 
 ---
-### 📔 Notebooks in This Folder
-
-This folder includes Databricks notebooks that:
-- Walk through the setup steps interactively  
-- Show how to configure Spark for ADLS access  
-- Demonstrate uploading `.py` files, mounting ADLS paths, and reading from them  
-- Provide end-to-end flows for using the packaged library inside notebooks
 
 ✅ **Notebooks included:**
 ### 📔 Notebooks in This Folder
