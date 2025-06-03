@@ -18,6 +18,11 @@ the supported methods are now:
 ✅ **Cluster or workspace libraries** → attach prebuilt `.whl` or `.egg` files via UI or cluster config  
 ✅ **Init scripts (advanced)** → for automated, team-wide setups
 
+> ✅ Instead, Databricks **prescribes two supported methods** for loading custom libraries:
+> 1. **Workspace Files**
+> 2. **External Storage (e.g., ADLS) with `%pip install` from `.whl` files**
+
+
 | **Feature / Aspect**            | **Workspace Files**                                 | **ADLS (Azure Data Lake Storage)**                                                |
 |-------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
 | 🛠️ Setup Complexity            | ✅ Simple — upload via UI or CLI                    | ⚠️ Moderate — requires secret scope, no mounts in Azure Gov                       |
