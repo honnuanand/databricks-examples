@@ -38,11 +38,19 @@ This folder includes Databricks notebooks that:
 - Provide end-to-end flows for using the packaged library inside notebooks
 
 ✅ **Notebooks included:**
-- `01_ADLS_Library_Setup.ipynb` → Set up ADLS connection and prepare the library  
-- `02_ADLS_Library_Usage.ipynb` → Use the uploaded library inside Databricks notebooks  
-- `Access-ADLS-Container from the Notebook.ipynb` → Directly access and interact with the ADLS container from a notebook
+### 📔 Notebooks in This Folder
 
-✅ These notebooks act as **step-by-step guides** and are the primary reference for running the examples in Databricks.
+This folder includes Databricks notebooks that:
+- Walk through the setup steps interactively  
+- Show how to configure Spark for ADLS access  
+- Demonstrate uploading `.py` files, mounting ADLS paths, and reading from them  
+- Provide end-to-end flows for using the packaged library inside notebooks
+
+✅ **Notebooks included:**
+- `00_Setup and Access-ADLS-Container from the Notebook.ipynb` → Create Databricks secret, set up ADLS access, and verify connectivity  
+- `01_ADLS_Library_Setup.ipynb` → Prepare the custom Python library and upload it to ADLS  
+- `02_ADLS_Library_Usage.ipynb` → Use the uploaded library inside Databricks notebooks
+
 
 ✅ These notebooks act as **step-by-step guides** and are the primary reference for running the examples in Databricks.
 ---
